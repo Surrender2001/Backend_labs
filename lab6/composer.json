@@ -1,0 +1,17 @@
+{
+    "name": "serj/test",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.3"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.0",
+        "monolog/monolog": "2.6.0"
+    }
+}
