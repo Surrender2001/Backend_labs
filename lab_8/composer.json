@@ -1,0 +1,11 @@
+{
+    "name": "msi/test_8_lab",
+    "autoload": {
+        "psr-4": {
+            "AR\\": "src/"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.4"
+    }
+}

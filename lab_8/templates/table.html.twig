@@ -1,0 +1,14 @@
+<table class="table">
+    <thead>
+    <tr>
+    </tr>
+    </thead>
+    <tbody>
+    {%  for row in data %}
+        <tr>
+            <td>{{row.id}}</td>
+            <td>{{row.title}}</td>
+        </tr>
+    {%  endfor %}
+    </tbody>
+</table>
