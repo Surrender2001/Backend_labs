@@ -1,0 +1,11 @@
+{
+    "name": "root/8_lab",
+    "require": {
+        "twig/twig": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
