@@ -1,0 +1,11 @@
+{
+    "name": "root/datamapper",
+    "autoload": {
+        "psr-4": {
+            "Datamapper\\": "src/"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.4"
+    }
+}
