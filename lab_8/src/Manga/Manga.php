@@ -51,12 +51,11 @@ class Manga
 
 
 
-    public function findById($id)
+  public function findById($id)
     {
         $sql = 'SELECT * from anime WHERE id=:id LIMIT 1';
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam('id', $id);
-        $stmt->execute();
+        $stmt->execute(['id'=>$id]);
         return $stmt->fetchAll()[0];
     }
 
@@ -64,8 +63,7 @@ class Manga
     {
         $sql = 'SELECT * from anime WHERE name=:name';
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam('name', $name);
-        $stmt->execute();
+        $stmt->execute(['name',$name]);
         return $stmt->fetchAll();
     }
 
@@ -84,15 +82,14 @@ class Manga
 
     }
 
+    //ActiveRecord
     public function save()
     {
         $id = $this->id;
         $title = $this->title;
         $sql = 'INSERT INTO anime(id, name) values(:id, :title)';
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam('id', $id);
-        $stmt->bindParam('title', $title);
-        $stmt->execute();
+        $stmt->execute(['id'=>$id,'title'=>$title,]);
     }
 
     public function delete()
@@ -100,8 +97,7 @@ class Manga
         $id = $this->id;
         $sql = 'DELETE FROM anime WHERE id=:id';
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam('id', $id);
-        $stmt->execute();
+        $stmt->execute(['id'=>$id]);
 
     }
 
