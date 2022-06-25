@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messenger{% endblock %}
+
+{% block body %}
+{{ form_start(message_form, {'attr': {'class' : 'form'}}) }}
+    {{ form(message_form) }}
+{{ form_end(message_form) }}
+
+<div class="chat-components">
+    <blockquote class="blockquote text-center">
+        {% for message in messages %}
+            <p class="chat-text mb-0">{{ message.datetime.format('d.m.Y H:i:s') }} <b>{{ message.sender.username }}</b>: {{ message.text }}</p>
+        {% endfor %}
+    </blockquote>
+</div>
+
+{% endblock %}
